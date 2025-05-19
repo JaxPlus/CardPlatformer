@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmba0ef05g6hm"]
+
+[ext_resource type="Texture2D" uid="uid://bs1l1dq6gigig" path="res://assets/sprites/card_knight_logo.png" id="1_5oq2b"]
+[ext_resource type="Texture2D" uid="uid://b2pjtsrkcm0sp" path="res://assets/sprites/menu_background.png" id="1_g1w8j"]
+[ext_resource type="Theme" uid="uid://c6q7mn6p45mn8" path="res://themes/menu_btns.tres" id="2_pcr8e"]
+[ext_resource type="FontFile" uid="uid://ctys740ixv3l4" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_wv6pp"]
+[ext_resource type="FontFile" uid="uid://cq06nsmyu2fya" path="res://assets/fonts/PixelOperator8.ttf" id="3_jn6ft"]
+[ext_resource type="Script" path="res://scripts/play.gd" id="5_xo6xb"]
+[ext_resource type="Script" path="res://scripts/exit.gd" id="6_5ep0s"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_g1w8j")
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 41.0
+offset_bottom = 163.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("1_5oq2b")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 29.0
+offset_right = 64.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_pcr8e")
+theme_override_fonts/font = ExtResource("2_wv6pp")
+text = "Play"
+script = ExtResource("5_xo6xb")
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_pcr8e")
+theme_override_fonts/font = ExtResource("3_jn6ft")
+text = "Exit"
+script = ExtResource("6_5ep0s")
+
+[connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer/Play" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="VBoxContainer/Exit" method="_on_pressed"]

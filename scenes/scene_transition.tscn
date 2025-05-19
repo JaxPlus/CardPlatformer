@@ -1,0 +1,221 @@
+[gd_scene load_steps=23 format=3 uid="uid://fsfshsi0a07t"]
+
+[ext_resource type="Script" path="res://scripts/scene_transition.gd" id="1_g6u42"]
+[ext_resource type="Texture2D" uid="uid://rfuolc70dace" path="res://assets/sprites/knight.png" id="2_tkd41"]
+
+[sub_resource type="Animation" id="Animation_hm84u"]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoxContainer/AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ra75t"]
+resource_name = "dissolve"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoxContainer/AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cnew0"]
+_data = {
+"RESET": SubResource("Animation_hm84u"),
+"dissolve": SubResource("Animation_ra75t")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ywdi"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dobw"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvqov"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yicg"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn30h"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amve2"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q1hf"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijiiq"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(224, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwxuj"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtafb"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m3o5"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyrkd"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqdxh"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltnrj"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6wk3"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vic0"]
+atlas = ExtResource("2_tkd41")
+region = Rect2(224, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxhjx"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ywdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dobw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvqov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yicg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn30h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amve2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q1hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijiiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwxuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtafb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m3o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyrkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqdxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltnrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6wk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vic0")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="scene_transition" type="CanvasLayer"]
+script = ExtResource("1_g6u42")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.635294, 0.0627451, 0.12549, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cnew0")
+}
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BoxContainer"]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(5.25, 5.25)
+sprite_frames = SubResource("SpriteFrames_wxhjx")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.17315
